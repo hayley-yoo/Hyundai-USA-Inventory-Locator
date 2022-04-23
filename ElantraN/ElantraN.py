@@ -21,7 +21,6 @@ def warning():
     msgbox.showwarning("Error", "Invalid Zipcode")
 
 def btncmd():
-    print("Searching...")
     parseJSON(zipText.get(), CCDict[ExtColor.get()],TRDict[Transmission.get()])
 
 def parseJSON(zip, color, trans):
@@ -57,8 +56,6 @@ def parseJSON(zip, color, trans):
                             Arriving = ""
                         Status = statusdict[data["data"][0]["dealerInfo"][i]['vehicles'][j]["inventoryStatus"]]
                         vehicleList.append([Dealership, Location, Distance, VIN, Arriving, Status])
-                        # table.insert(parent="", index="end", iid=index, text='', values=(Dealership, Location, Distance, VIN, Arriving, Status))
-                        # index += 1
     vehicleList.sort(key = lambda x: x[2])
     for i in vehicleList:
         table.insert(parent="", index="end", iid=index, text='', values=(i[0], i[1], i[2], i[3], i[4], i[5]))
@@ -66,7 +63,8 @@ def parseJSON(zip, color, trans):
 
 zipText = Entry(root, width=10)
 zipText.pack()
-zipText.insert(0,"47906")
+#  enter your zipcode here
+zipText.insert(0,"")
 btn1 = Button(root, fg="blue", text="Search", command=btncmd)
 btn1.pack()
 
@@ -77,6 +75,7 @@ ColorB = []
 ColorDict = {0: "Performance Blue", 1: "Cyber Gray", 2: "Phantom Black", 3: "Ceramic White", 4: "Intense Blue"}
 for i in range(len(ColorDict)):
     ColorB.append(Checkbutton(frame_Color, text=ColorDict[i], onvalue=i, variable=ExtColor))
+    # enter exterior color here
     if ColorDict[i] == "Performance Blue":
         ColorB[i].select()
     ColorB[i].pack()
@@ -88,7 +87,8 @@ TransB = []
 TransDict = {0: "Manual", 1: "Automatic"}
 for i in range(len(TransDict)):
     TransB.append(Checkbutton(frame_Trans, text=TransDict[i], onvalue=i, variable=Transmission))
-    if TransDict[i] == "Manual":
+    # enter transmission type here
+    if TransDict[i] == "Automatic":
         TransB[i].select()
     TransB[i].pack()
 
