@@ -4,7 +4,7 @@ Download Release file to get Mac Application & Windows Executable
 
 2022-04-22 Started Project, Finished Elantra N version
 
-## If you want to customize the program (set the default selection)
+## If you want to customize the program (setting the default selection)
 
 0. Install python (at least 3.10) and pip
 
