@@ -1,9 +1,10 @@
 # Hyundai-USA-Inventory-Locator
-=============
 
-__Download Release file to get Mac Application & Windows Executable__
+Download Release file to get Mac Application & Windows Executable
 -------------
 
+History
+-------------
 2022-04-22 Started Project, Finished Elantra N version
 
 ## If you want to customize the program (setting the default selection)
