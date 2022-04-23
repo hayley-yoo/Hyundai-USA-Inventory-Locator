@@ -9,6 +9,7 @@ Download Release file to get Mac Application & Windows Executable
 0. Install python (at least 3.10) and pip
 
 https://www.python.org/downloads/
+
 https://phoenixnap.com/kb/install-pip-windows
 
 1. Open Elantra.py
