@@ -2,7 +2,7 @@
 
 How to use
 -------------
-Download Release file to get Mac Application & Windows Executable
+Download Release file to get Mac Application & Windows Executable. It is under /ElantraN/Executables.
 
 History
 -------------
