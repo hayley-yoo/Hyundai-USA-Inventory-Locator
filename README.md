@@ -7,6 +7,7 @@ Download Release file to get Mac Application & Windows Executable
 ## If you want to customize the program
 
 0. Install python (at least 3.10) and pip
+
 https://www.python.org/downloads/
 https://phoenixnap.com/kb/install-pip-windows
 
