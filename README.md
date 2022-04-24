@@ -51,9 +51,13 @@ Selections are (Case Sensitive):
 pip install pyinstaller
 ```
 
-8. Make executable
+8-1. Make executable (Windows)
 ```
 pyinstaller --onefile ElantraN.py
+```
+8-2. Make executable (Mac)
+```
+pyinstaller -w -F ElantraN.py
 ```
 
 9. You will have your working program under dist folder. You can erase the rest.
