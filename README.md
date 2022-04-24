@@ -51,11 +51,7 @@ Selections are (Case Sensitive):
 pip install pyinstaller
 ```
 
-8-1. Make executable (Windows)
-```
-pyinstaller --onefile ElantraN.py
-```
-8-2. Make executable (Mac)
+8-1. Make executable
 ```
 pyinstaller -w -F ElantraN.py
 ```
