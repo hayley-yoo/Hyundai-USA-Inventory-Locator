@@ -38,7 +38,7 @@ def parseJSON(zip, color, trans):
     index = 0
 
     dealerLength = len(data["data"][0]["dealerInfo"])
-    statusdict = {"IR": "In route", "TN": "Transit", "AA": "At sea", "PA": "Port allocated", "DS": "Dealer Stock"}
+    statusdict = {"IR": "In route", "TN": "Transit", "AA": "At sea", "PA": "Port allocated", "DS": "Dealer Stock", "IT": "IT"}
     for i in range(dealerLength):
         if data["data"][0]["dealerInfo"][i]['vehicles'] is None:
             pass
