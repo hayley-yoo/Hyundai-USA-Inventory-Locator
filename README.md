@@ -44,7 +44,7 @@ https://phoenixnap.com/kb/install-pip-windows
 * Ceramic White
 
 * Intense Blue
-4. Line 78, enter exterior color
+4. Line 78, enter transmission type
    
    ```
    if TransDict[i] == "Manual":
