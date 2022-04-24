@@ -20,14 +20,30 @@ TRDict = {0: "MANUAL", 1:"AUTO"}
 def warning():
     msgbox.showwarning("Error", "Invalid Zipcode")
 
+def errorOccur():
+    msgbox.showwarning("Error", "Error Occured\nLeave note in GitHub discussion")
+
+def badZip():
+    msgbox.showwarning("Error", "Enter Zipcode")
+
 def btncmd():
-    parseJSON(zipText.get(), CCDict[ExtColor.get()],TRDict[Transmission.get()])
+    try:
+        parseJSON(zipText.get(), CCDict[ExtColor.get()],TRDict[Transmission.get()])
+    except (RuntimeError, TypeError, OSError, KeyError, ConnectionError, ValueError, NameError):
+        errorOccur()
 
 def parseJSON(zip, color, trans):
     headers = {'referer': 'https://www.hyundaiusa.com/us/en/vehicles'}
     url = "https://www.hyundaiusa.com/var/hyundai/services/inventory/vehicleList.json?zip={}&year=2022&model=ELANTRAN&radius=3000".format(zip)
     resp = requests.get(url=url, headers=headers)
     data = resp.json()
+    try:
+        if data["HTTP Status Code"] == '400':
+            badZip()
+            return
+    except KeyError:
+        pass
+
     if data["data"][0]["dealerInfo"] == None:
         warning()
         return
@@ -38,7 +54,7 @@ def parseJSON(zip, color, trans):
     index = 0
 
     dealerLength = len(data["data"][0]["dealerInfo"])
-    statusdict = {"IR": "In route", "TN": "Transit", "AA": "At sea", "PA": "Port allocated", "DS": "Dealer Stock"}
+    statusdict = {"IR": "In route", "TN": "Transit", "AA": "At sea", "PA": "Port allocated", "DS": "Dealer Stock", "IT": "IT"}
     for i in range(dealerLength):
         if data["data"][0]["dealerInfo"][i]['vehicles'] is None:
             pass

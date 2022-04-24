@@ -53,9 +53,9 @@ Selections are (Case Sensitive):
 pip install pyinstaller
 ```
 
-8. Make executable
+8-1. Make executable
 ```
-pyinstaller --onefile ElantraN.py
+pyinstaller -w -F ElantraN.py
 ```
 
 9. You will have your working program under dist folder. You can erase the rest.
