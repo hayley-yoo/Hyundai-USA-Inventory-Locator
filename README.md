@@ -66,7 +66,7 @@ https://phoenixnap.com/kb/install-pip-windows
    pip install pyinstaller
    ```
 
-8-1. Make executable
+8. Make executable
 
 ```
 pyinstaller -w -F ElantraN.py
