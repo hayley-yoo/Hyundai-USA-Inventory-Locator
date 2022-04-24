@@ -1,5 +1,7 @@
 # Hyundai-USA-Inventory-Locator
 
+https://www.reddit.com/r/ElantraN/comments/u9wq03/nationwide_elantran_locator/ 
+
 How to use
 -------------
 Download Release file to get Mac Application & Windows Executable. It is under /ElantraN/Executables.
