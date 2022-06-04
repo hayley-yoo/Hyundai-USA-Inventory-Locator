@@ -1,7 +1,7 @@
 # Hyundai-USA-Inventory-Locator
 https://www.reddit.com/r/ElantraN/comments/u9wq03/nationwide_elantran_locator/ 
 
-![](https://github.com/hayley-yoo/Hyundai-USA-Inventory-Locator/blob/main/ElantraN/.idea/fig.PNG)
+![](https://github.com/translucentfocus/Hyundai-USA-Inventory-Locator/blob/patch-2/ElantraN/.idea/fig.png)
 How to use
 -------------
 
