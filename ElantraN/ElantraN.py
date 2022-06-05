@@ -26,7 +26,7 @@ def errorOccur():
 def badZip():
     msgbox.showwarning("Error", "Enter Zipcode")
 
-def btncmd():
+def btncmd(event=None):
     try:
         parseJSON(zipText.get(), CCDict[ExtColor.get()],TRDict[Transmission.get()])
     except (RuntimeError, TypeError, OSError, KeyError, ConnectionError, ValueError, NameError):
@@ -81,6 +81,8 @@ zipText = Entry(root, width=10)
 zipText.pack()
 #  enter your zipcode here
 zipText.insert(0,"")
+# Bind the Enter key to the Search function
+root.bind('<Return>', btncmd)
 btn1 = Button(root, fg="blue", text="Search", command=btncmd)
 btn1.pack()
 
@@ -90,11 +92,11 @@ ExtColor = IntVar()
 ColorB = []
 ColorDict = {0: "Performance Blue", 1: "Cyber Gray", 2: "Phantom Black", 3: "Ceramic White", 4: "Intense Blue"}
 for i in range(len(ColorDict)):
-    ColorB.append(Checkbutton(frame_Color, text=ColorDict[i], onvalue=i, variable=ExtColor))
+    ColorB.append(Radiobutton(frame_Color, text=ColorDict[i], value=i, variable=ExtColor))
     # enter exterior color here
     if ColorDict[i] == "Performance Blue":
         ColorB[i].select()
-    ColorB[i].pack()
+    ColorB[i].pack(anchor=NW)
 
 frame_Trans = LabelFrame(root, text="Transmission")
 frame_Trans.pack(side="right", )
@@ -102,11 +104,11 @@ Transmission = IntVar()
 TransB = []
 TransDict = {0: "Manual", 1: "Automatic"}
 for i in range(len(TransDict)):
-    TransB.append(Checkbutton(frame_Trans, text=TransDict[i], onvalue=i, variable=Transmission))
+    TransB.append(Radiobutton(frame_Trans, text=TransDict[i], value=i, variable=Transmission))
     # enter transmission type here
     if TransDict[i] == "Automatic":
         TransB[i].select()
-    TransB[i].pack()
+    TransB[i].pack(anchor=NW)
 
 frame_Search = LabelFrame(root, text="Result")
 frame_Search.pack(side="bottom", fill="both", expand=True)
