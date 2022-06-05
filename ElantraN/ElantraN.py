@@ -26,7 +26,7 @@ def errorOccur():
 def badZip():
     msgbox.showwarning("Error", "Enter Zipcode")
 
-def btncmd():
+def btncmd(event=None):
     try:
         parseJSON(zipText.get(), CCDict[ExtColor.get()],TRDict[Transmission.get()])
     except (RuntimeError, TypeError, OSError, KeyError, ConnectionError, ValueError, NameError):
@@ -81,6 +81,8 @@ zipText = Entry(root, width=10)
 zipText.pack()
 #  enter your zipcode here
 zipText.insert(0,"")
+# Bind the Enter key to the Search function
+root.bind('<Return>', btncmd)
 btn1 = Button(root, fg="blue", text="Search", command=btncmd)
 btn1.pack()
 
