@@ -1,7 +1,7 @@
 # Hyundai-USA-Inventory-Locator
 https://www.reddit.com/r/ElantraN/comments/u9wq03/nationwide_elantran_locator/ 
 
-![](https://github.com/translucentfocus/Hyundai-USA-Inventory-Locator/blob/patch-2/ElantraN/.idea/fig.png)
+![](ElantraN/fig.png)
 How to use
 -------------
 
@@ -22,38 +22,38 @@ https://phoenixnap.com/kb/install-pip-windows
 
 1. Open Elantra.py
 
-2. Line 67, enter your zipcode
+2. Line 97, enter your zipcode
    
    ```
    zipText.insert(0,"11111")
    ```
 
-3. Line 78, enter exterior color
+3. Line 78, change array index to set default exterior color
    
    ```
-   zipText.insert(0,"Cyber Gray")
+   ColorB[0].select()
    ```
    
-   Selections are (Case Sensitive):
-* Performance Blue
+   Color choices are:
+* Performance Blue ```ColorB[0].select()```
 
-* Cyber Gray
+* Cyber Gray ```ColorB[1].select()```
 
-* Phantom Black
+* Phantom Black ```ColorB[2].select()```
 
-* Ceramic White
+* Ceramic White ```ColorB[3].select()```
 
-* Intense Blue
-4. Line 78, enter transmission type
+* Intense Blue ```ColorB[4].select()```
+4. Line 137, enter transmission type
    
    ```
-   if TransDict[i] == "Manual":
+   TransB[1].select()
    ```
    
-   Selections are (Case Sensitive):
-* Automatic
+   Choices are:
+* Automatic ```TransB[1].select()```
 
-* Manual
+* Manual ```TransB[0].select()```
 5. Save and exit
 
 6. Locate your termial to the folder where Elantra.py is.
@@ -70,4 +70,4 @@ https://phoenixnap.com/kb/install-pip-windows
 pyinstaller -w -F ElantraN.py
 ```
 
-9. You will have your working program under dist folder. You can erase the rest.
+9. You will have your working program under the dist folder. You can erase the rest.
